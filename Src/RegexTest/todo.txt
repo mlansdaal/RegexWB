@@ -1,0 +1,24 @@
+Unit tests:
+
+*) Add option to hide match and other items in the output textbox.
+
+*) Change the save code so that it just uses the save dialog, not the intermediate dialog
+
+1) The alternate beginning and end of line anchors aren't interpreted correctly.
+
+2) Add in support to interpret conditional expressions:
+
+	(?(expression)yes|no)
+	
+	This will likely require a whole new class to do properly. It will need to:
+	
+		a) Match the "?(" part. 
+		b) Parse an expression
+		c) check for the closing brace.
+		d) parse the yes|no expression 
+		e) decode the RegexExpression for yes no, and break at the first alternation that
+		   we find. 
+		   
+ 3) Make split work on multi-line strings, rather than splitting on each line.
+
+4) Add a context menu for "add" on the regex window, so you can right-click

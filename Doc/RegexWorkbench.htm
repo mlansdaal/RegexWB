@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Regex Workbench</title>
+</head>
+
+<body>
+
+<h1>Regular Expression Workbench</h1>
+<h2>Eric Gunnerson <a href="mailto:(EricGu@Microsoft.Com">(EricGu@Microsoft.Com</a>)</h2>
+<p>8/8/2002</p>
+<h2>Introduction</h2>
+<p>Regular expressions are a really powerful facility, but they're a bit tough 
+to learn. I've written this workbench to make it easier to create and understand 
+regular expressions.</p>
+<p>If you find any bugs - especially those where the tooltip or interpret 
+feature doesn't work - please send them to me. </p>
+
+<h1>Using a regular expression</h1>
+<p>To learn how to use the workbench, it's useful to use a sample regular 
+expression. The following example can be used to match telephone numbers. For a 
+number such as:</p>
+<p>555-1212</p>
+<p>The following regular expression can be used:</p>
+<p>(?&lt;Number&gt;\d\d\d-\d\d\d\d)</p>
+<p>Type the regex into the <b>Regex</b> editbox, and then type the phone number 
+into the Strings <b>editbox</b>. Press <b>Execute</b> to try to match the 
+regular expression against the string. The results of the match will apear in 
+the output window. Hover over the regular expression to see what the various 
+parts of the regular expression mean. </p>
+<h1>Interface Details</h1>
+<p><img border="0" src="image.jpg" width="1009" height="769"></p>
+<h2>1) Regular Expression editbox</h2>
+<p>Use this editbox to enter the regular expression. You can either type the 
+expression directly, or use the <b>Add</b> button to enter a specific regular 
+expression element. Once the expression is entered, you can hover over it to 
+understand what the different parts of the regular expression mean.</p>
+<p>When hover is enabled, the selection in the editbox will be changed as you 
+hover over different areas. It's sometimes annoying to have this happen when 
+you're editing a regex, so you can turn this off by unchecking the <b>Hover 
+Interpret</b> checkbox</p>
+<p>You can write the regex using multiple lines and comments, if you turn on the
+<b>IgnorePatternWhitespace</b> option. For example, you could write the 
+telephone number regex as:</p>
+<p><font face="Courier New">(?&lt;Number&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+# Capture to Number<br>
+\d\d\d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+# Match 3 digits<br>
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+# Match -<br>
+\d\d\d\d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+# Match 4 digits<br>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+# End of capture</font></p>
+<p>which makes it much easier to understand. Note that if you use this option, 
+you'll have to escape any whitespace (ie '\ ' to match a space).</p>
+<h2>2) Test string editbox</h2>
+<p>This editbox is used to specify the strings that are tested against the regex. 
+If there is more than one line, each line will be passed to the regex for a 
+match. If the <b>One String</b> checkbox is checked, a single string containing 
+all the lines and the line separators will be created and tested against the 
+regex</p>
+<h2>3) Output window</h2>
+<p>This window display the match results of the regular expression</p>
+<h2>4) Add Button</h2>
+<p>Use this button to add a regular expression construct at the current location 
+in the regex.</p>
+<h2>5) Option checkboxes</h2>
+<p>These checkboxes are used to set the <b>RegexOptions</b> options that are 
+used to create the regular expression object. Hover over the checkboxes to see 
+what they do.</p>
+<h2>6) Interpret Button</h2>
+<p>Interpret the regular expression and put the results into the output window. 
+This is the same output as hovering over a regex, but it interprets the whole 
+regex at once.</p>
+<h2>7) Execute Button</h2>
+<p>Try to match the test strings with the regex</p>
+<h2>8) Split Button</h2>
+<p>Call regex.split with this regex</p>
+<h2>9) Create code buttons</h2>
+<p>Create code to create this regex in either C# or VB format. The text will be 
+displayed in the output window and placed on the clipboard</p>
+<h2>10) Make assembly button</h2>
+<p>Create a .NET assembly with this assembly in it.</p>
+<h2>11) Timing Information</h2>
+<p>Profile the execute of the regular expression. Set the number of interations 
+to perform, execute the regex, and the compile and execution times will be 
+displayed in the editbox.</p>
+<h2>12) Hover Interpret checkbox</h2>
+<p>Enable or disable the hover function on the regex editbox</p>
+<h2>13) Paste C# Button</h2>
+<p>Take the regex creation code that was created by the C# create code button, 
+and parse it back to the regex and options</p>
+<h2>14) About Button</h2>
+<h2>15) One String checkbox</h2>
+<p>Treat the lines in the test editbox as one multiline text rather than 
+separate lines</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

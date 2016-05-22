@@ -1,0 +1,25 @@
+From: Doug Wilson [doug@capecommedia.com]
+Sent: Tuesday, November 12, 2002 12:19 PM
+To: Eric Gunnerson
+Subject: Regular Expression Workbench bug
+
+Hi Eric,
+
+I want to start by saying thanks for a great tool!
+
+I've found that the following Regular Expression doesn't seem be handled correctly in the Regular Expression Edit Box:
+
+  [\[\]]
+
+My understanding of RE is that it should evaluate to 'Any character in "[]"'.  Currently, the pop displays 'Any character in "\[\" which is incorrect.
+
+If it helps any, I obtained the source from the GotDotNet site in the user samples area.  Its listed as version 1.04 on the site.
+
+Again, thanks for a great tool!
+
+Doug Wilson
+Systems Analyst
+Capecom Media Inc
+ 
+
+
